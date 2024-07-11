@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <template id="taskbox">
+        <div class="task">
+            <h1 class="tasktitle"> Task Title </h1>
+            <span class="taskdescription">
+                task description
+            </span>
+            <span class="taskdates"> 
+                created: 01.07.07 // due: 12.7.24
+            </span>
+            <button class="completebutton">
+                Complete
+            </button>
+        </div>
+    </template>
+
+    <head >
+        <title>Task Manager </title>
+        <link href="style.css" rel="stylesheet">
+
+        <script>
+            function addBox() {
+                let temp = document.getElementById("taskbox");
+                let clone = temp.content.cloneNode(true);
+                document.getElementById("uncompleted").appendChild(clone);
+            }
+
+            function completeTask(sender ) {
+
+            }
+        </script>
+
+
+    </head>
+
+    <body>
+         <h1 class="heading bold">
+            TASK BOARD 
+         </h1> 
+
+        <div class="main">
+            <div id="uncompleted" class="task_viewer">
+                <div class="task">
+                    <h1 class="tasktitle"> Task Title </h1>
+                    <span class="taskdescription">
+                        task description
+                    </span>
+                    <span class="taskdates"> 
+                        created: 01.07.07 // due: 12.7.24
+                    </span>
+                    <button class="completebutton">
+                        Complete
+                    </button>
+                </div>
+            </div>
+            <div class="task_viewer">
+            </div>
+        </div>
+
+        <button class="button" onclick= "addBox()">
+            Create New Task
+        </button> 
+
+    </body>
+
+</html>
