@@ -1,3 +1,15 @@
+# Task Manager - Frontend Webserver
+
+A tool for organising and assigning of tasks
+
+Manages the website displayed to the user and the inputs taken from the user Install the required packages
+
+### `npm i`
+
+### `npm start`
+
+This will start the webserver at `localhost:3000`
+
 # How to use the app?
 
 ## Adding new tasks
