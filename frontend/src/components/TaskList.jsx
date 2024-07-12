@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 
-const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete, toggleStatus }) => 
+const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete, toggleStatus, removeTask }) => 
   
   { 
     console.log({completedTasks})
@@ -45,12 +45,19 @@ const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete, toggleSt
                     <span className="taskdates"> 
                     due: {task.dateDue}
                     </span>
+                    <div className="buttonrow">
                     <button
               className="completebutton"
               onClick={() => toggleStatus(task.id)}
             >
               Complete
             </button>
+            <button
+              className="removebutton"
+              onClick={() => removeTask(task.id)}
+            >
+              Remove
+            </button> </div>
                 </div>)}
                 {/* <div className="task">
                     <h1 className="tasktitle"> Task Title </h1>
@@ -74,12 +81,19 @@ const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete, toggleSt
                     <span className="taskdates"> 
                         due: {task.dateDue}
                     </span>
+                    <div className="buttonrow">
                     <button
               className="completebutton"
               onClick={() => toggleStatus(task.id)}
             >
               Uncomplete
             </button>
+            <button
+              className="removebutton"
+              onClick={() => removeTask(task.id)}
+            >
+              Remove
+            </button> </div>
                 </div>)}
             </div>
     </div> 

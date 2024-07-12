@@ -20,6 +20,15 @@ const TaskListContainer = forwardRef(({ onEdit, onDelete }, ref) => {
     }
   };
 
+  const removeTask = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3001/tasks/${id}`);
+      fetchTasks();
+    } catch (error) {
+      console.error("Error fetching tasks", error);
+    }
+  }
+
   const fetchTasks = async () => {
     try {
       const response = await axios.get("http://localhost:3001/tasks");
@@ -43,7 +52,7 @@ useEffect(()=>{
     fetchTasks,
   }));
 
-  return <TaskList toggleStatus={toggleStatus} uncompletedTasks={uncompletedTasks} completedTasks={completedTasks} onEdit={onEdit} onDelete={onDelete} />;
+  return <TaskList removeTask={removeTask} toggleStatus={toggleStatus} uncompletedTasks={uncompletedTasks} completedTasks={completedTasks} onEdit={onEdit} onDelete={onDelete} />;
 });
 
 export default TaskListContainer;

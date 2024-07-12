@@ -214,10 +214,28 @@ h1 {
   border-width: 0px;
 }
 
+.removebutton {
+  margin: 10px 5px 0px 5px;
+  width: 35%;
+  align-self: center;
+  padding: 10px 0px 10px 0px;
+  font-size: 10pt;
+  border-radius: 20px;
+  background-color: rgb(255, 101, 101);
+  color: white;
+  border-width: 0px;
+}
+
 .site {
   background-color: #282828;
 }
 
+.buttonrow {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
 
 .heading {
   color:rgba(238, 144, 224, 0.922);
