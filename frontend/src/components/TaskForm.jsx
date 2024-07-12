@@ -16,16 +16,16 @@ export const TaskForm = () => {
                 </input>
             </form> */}
             <form>
-                <label for="tname">Task name:</label>
-                <input type="text" id="tname" name="tname>">
+                <label for="tname">Task name:(required) </label>
+                <input type="text" id="tname" name="tname>" required>            
                 </input>
                 <br/>
-                <label for="des">Description:</label>
-                <input type="text" id="des" name="desc">
+                <label for="des">Description:(required) </label>
+                <input type="text" id="des" name="desc" required>
                 </input>
                 <br/>
-                <label for="ddate">Due date:</label>
-                <input type="date" id="ddate" name="ddate">
+                <label for="ddate">Due date:(required) </label>
+                <input type="date" id="ddate" name="ddate" required>
                 </input>
                 <br/>
                 <input type="submit" value="Submit">
