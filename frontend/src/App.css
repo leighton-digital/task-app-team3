@@ -108,3 +108,120 @@ h1 {
   background-color: #f44336;
   color: white;
 }
+
+.flex {
+  display: flex;
+}
+
+.task_viewer {
+  padding:2% 0% 2% 0%; 
+  margin:2% 0% 2% 0%;  
+  width:100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(43,45,66);
+  justify-content: start;
+  border-radius: 40px;
+  overflow: auto;
+  color: #f9f9f9;
+}
+
+.main {
+  width:100%;
+  display: flex;
+  font-size: 15pt;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.task_viewer {
+  padding:2% 0% 2% 0%; 
+  margin:2% 2% 2% 2%;  
+  width:50%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(43,45,66);
+  justify-content: start;
+  border-radius: 40px;
+  overflow: auto;
+}
+
+.task {
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px 20px 10px 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+
+  background-color: rgb(123, 117, 117);
+  border-radius: 25px;
+
+  color: rgba(233, 196, 227, 0.922);
+  text-align:center;
+}
+
+.tasktitle {
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  stroke-width: bold;
+  text-decoration: underline;
+  font-size: 15pt;
+  color: #ffffff;
+
+}
+
+.taskdates {
+  margin: 0px;
+  font-size: 15pt;
+}
+
+.taskdescription {
+
+  margin: 10px 0px 10px 0px;
+
+}
+
+.button {
+  width: 100%;
+  padding: 6%;
+  font-size:20pt ;
+  border-radius: 30px;
+}
+
+.completebutton {
+  margin: 10px 5px 0px 5px;
+  width: 35%;
+  align-self: center;
+  padding: 10px 0px 10px 0px;
+  font-size: 10pt;
+  border-radius: 20px;
+  background-color: rgb(43,45,66);
+  color: white;
+  border-width: 0px;
+}
+
+  
+      
+body {
+  background: rgb(123, 117, 117)
+  }
+
+
+.heading {
+  color:rgba(238, 144, 224, 0.922);
+  font-size:100px;
+ text-align:center;
+ margin: 0;
+ font-weight: bolder;
+  
+}
+
+.bold {
+  font-weight: 700;
+}

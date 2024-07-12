@@ -56,11 +56,33 @@ const App = () => {
           setEditingTask={setEditingTask}
         />
       </div>
-      <TaskListContainer
-        ref={taskListRef}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
+      <div class="flex">
+        <TaskListContainer
+          ref={taskListRef}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
+      </div>
+        {/* 
+        <div class="main">
+            <div id="uncompleted" class="task_viewer">
+                <div class="task">
+                    <h1 class="tasktitle"> Task Title </h1>
+                    <span class="taskdescription">
+                        task description
+                    </span>
+                    <span class="taskdates"> 
+                        created: 01.07.07 // due: 12.7.24
+                    </span>
+                    <button class="completebutton">
+                        Complete
+                    </button>
+                </div>
+            </div>
+            <div class="task_viewer">
+            </div>
+        </div> 
+        */}
     </div>
   );
 };

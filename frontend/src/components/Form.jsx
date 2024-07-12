@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const statusOptions = ["to do", "complete"];
+const statusOptions = ["uncompleted", "completed"];
 
 export const TaskForm = ({
   onSubmit,
@@ -31,7 +31,7 @@ export const TaskForm = ({
       taskTitle: "",
       description: "",
       dateDue: "",
-      status: "to do", // Default value for new tasks
+      status: "uncompleted", // Default value for new tasks
     });
   };
 

@@ -8,16 +8,23 @@ import axios from "axios";
 import TaskList from "./TaskList"; // This is your presentational component
 
 const TaskListContainer = forwardRef(({ onEdit, onDelete }, ref) => {
-  const [tasks, setTasks] = useState([]);
+  const [completedTasks, setCompletedTasks] = useState([]);
+  const [uncompletedTasks, setUncompletedTasks] = useState([]);
 
   const fetchTasks = async () => {
     try {
       const response = await axios.get("http://localhost:3001/tasks");
-      setTasks(response.data);
+      const tasks = response.data;
+      setCompletedTasks(tasks.filter((task) => task.status === "completed"))
+      setUncompletedTasks(tasks.filter((task) => task.status === "uncompleted"))
     } catch (error) {
       console.error("Error fetching tasks", error);
     }
   };
+
+useEffect(()=>{
+  console.log(completedTasks)
+})
 
   useEffect(() => {
     fetchTasks();
@@ -27,7 +34,7 @@ const TaskListContainer = forwardRef(({ onEdit, onDelete }, ref) => {
     fetchTasks,
   }));
 
-  return <TaskList tasks={tasks} onEdit={onEdit} onDelete={onDelete} />;
+  return <TaskList uncompletedTasks={uncompletedTasks} completedTasks={completedTasks} onEdit={onEdit} onDelete={onDelete} />;
 });
 
 export default TaskListContainer;
