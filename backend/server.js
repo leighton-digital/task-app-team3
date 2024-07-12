@@ -184,6 +184,26 @@ app.put("/tasks/:id", (req, res) => {
   );
 });
 
+app.put("/tasks/status/:id", (req, res) => {
+  const { id, status } = req.params;
+  console.log(id, status)
+  return
+  // const { taskTitle, description, dateDue, status } = req.body;
+  db.run(
+    "UPDATE tasks SET taskTitle = ?, description = ?, dateDue = ?, status = ? WHERE id = ?",
+    [taskTitle, description, dateDue, status, id],
+    function (err) {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      if (this.changes === 0) {
+        return res.status(404).json({ message: "Task not found" });
+      }
+      res.json({ id, taskTitle, description, dateDue, status });
+    }
+  );
+});
+
 /**
  * @swagger
  * /tasks/{id}:
