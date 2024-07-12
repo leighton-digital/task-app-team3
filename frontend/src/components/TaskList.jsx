@@ -1,20 +1,14 @@
 import axios from "axios";
 import React from "react";
 
-const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete }) => 
+const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete, toggleStatus }) => 
   
   { 
     console.log({completedTasks})
     console.log({uncompletedTasks})
     
-    const toggleStatus= async (id, status) => {
-      console.log(id , status)
-      if (status === "uncompleted"){
-        await axios.put(`http://localhost:3001/tasks/status/${id}`);
-      }      
-    }
     return (
-  // <table className="tasks-table">
+  // <table classNameName="tasks-table">
   //   <thead>
   //     <tr>
   //       <th>Task</th>
@@ -30,10 +24,10 @@ const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete }) =>
   //         <td>{task.description}</td>
   //         <td>{task.dateDue}</td>
   //         <td>
-  //           <button className="edit-button" onClick={() => onEdit(task)}>
+  //           <button classNameName="edit-button" onClick={() => onEdit(task)}>
   //             Edit
   //           </button>
-  //           <button className="delete-button" onClick={() => onDelete(task.id)}>
+  //           <button classNameName="delete-button" onClick={() => onDelete(task.id)}>
   //             Delete
   //           </button>
   //         </td>
@@ -41,45 +35,51 @@ const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete }) =>
   //     ))} */}
   //   </tbody>
   // </table>
-    <div class="main">
-            <div id="uncompleted" class="task_viewer">
-              {uncompletedTasks.map((task) =>                 <div class="task">
-                    <h1 class="tasktitle"> {task.taskTitle} </h1>
-                    <span class="taskdescription">
+    <div className="main">
+            <div id="uncompleted" className="task_viewer">
+              {uncompletedTasks.map((task) =>                 <div className="task">
+                    <h1 className="tasktitle"> {task.taskTitle} </h1>
+                    <span className="taskdescription">
                     {task.description}
                     </span>
-                    <span class="taskdates"> 
-                    due: {task.dueDate}
+                    <span className="taskdates"> 
+                    due: {task.dateDue}
                     </span>
-                    <button class="completebutton" onClick={() => toggleStatus(task.id, task.status)}>
-                        Complete
-                    </button>
+                    <button
+              className="completebutton"
+              onClick={() => toggleStatus(task.id)}
+            >
+              Complete
+            </button>
                 </div>)}
-                {/* <div class="task">
-                    <h1 class="tasktitle"> Task Title </h1>
-                    <span class="taskdescription">
+                {/* <div className="task">
+                    <h1 className="tasktitle"> Task Title </h1>
+                    <span className="taskdescription">
                         task description
                     </span>
-                    <span class="taskdates"> 
+                    <span className="taskdates"> 
                         created: 01.07.07 // due: 12.7.24
                     </span>
-                    <button class="completebutton">
+                    <button className="completebutton">
                         Complete
                     </button>
                 </div> */}
             </div>
-            <div class="task_viewer">
-            {completedTasks.map((task) =>                 <div class="task">
-                    <h1 class="tasktitle"> {task.taskTitle} </h1>
-                    <span class="taskdescription">
+            <div className="task_viewer">
+            {completedTasks.map((task) =>                 <div className="task">
+                    <h1 className="tasktitle"> {task.taskTitle} </h1>
+                    <span className="taskdescription">
                     {task.description}
                     </span>
-                    <span class="taskdates"> 
-                        due: {task.dueDate}
+                    <span className="taskdates"> 
+                        due: {task.dateDue}
                     </span>
-                    <button class="completebutton">
-                        Uncomplete
-                    </button>
+                    <button
+              className="completebutton"
+              onClick={() => toggleStatus(task.id)}
+            >
+              Uncomplete
+            </button>
                 </div>)}
             </div>
     </div> 

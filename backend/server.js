@@ -185,23 +185,32 @@ app.put("/tasks/:id", (req, res) => {
 });
 
 app.put("/tasks/status/:id", (req, res) => {
-  const { id, status } = req.params;
-  console.log(id, status)
-  return
-  // const { taskTitle, description, dateDue, status } = req.body;
-  db.run(
-    "UPDATE tasks SET taskTitle = ?, description = ?, dateDue = ?, status = ? WHERE id = ?",
-    [taskTitle, description, dateDue, status, id],
-    function (err) {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-      if (this.changes === 0) {
-        return res.status(404).json({ message: "Task not found" });
-      }
-      res.json({ id, taskTitle, description, dateDue, status });
+  const { id } = req.params;
+  // Fetch the current status of the task
+  db.get(`SELECT status FROM tasks WHERE id = ?`, [id], (err, row) => {
+    if (err) {
+      return res.status(500).json({ error: err.message });
     }
-  );
+    if (!row) {
+      return res.status(404).json({ message: "Task not found" });
+    }
+ 
+    // Toggle the status
+    const newStatus =
+      row.status === "uncompleted" ? "completed" : "uncompleted";
+ 
+    // Update the status of the task
+    db.run(
+      `UPDATE tasks SET status = ? WHERE id = ?`,
+      [newStatus, id],
+      function (err) {
+        if (err) {
+          return res.status(500).json({ error: err.message });
+        }
+        res.json({ id, status: newStatus });
+      }
+    );
+  });
 });
 
 /**

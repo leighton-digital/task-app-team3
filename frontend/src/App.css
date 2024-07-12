@@ -1,6 +1,6 @@
 /* App.css */
 .container {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -12,10 +12,17 @@ h1 {
 
 .add-form,
 .edit-form {
-  margin: 20px 0;
+  margin: 0px 0;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
+  border-width: 0px;
+  background-color: rgb(43,45,66);
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.importanttitle {
+  text-decoration: underline;
+  font-size:20pt;
 }
 
 .add-form h2,
@@ -26,8 +33,9 @@ h1 {
 .add-form form,
 .edit-form form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  gap: 30px
 }
 
 .add-form label,
@@ -139,7 +147,7 @@ h1 {
   padding:2% 0% 2% 0%; 
   margin:2% 2% 2% 2%;  
   width:50%;
-  height: 400px;
+  height: 580px;
   display: flex;
   flex-direction: column;
   background-color: rgb(43,45,66);
@@ -154,8 +162,8 @@ h1 {
   flex-direction: column;
 
   margin: 10px 20px 10px 20px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
 
   background-color: rgb(123, 117, 117);
@@ -206,11 +214,9 @@ h1 {
   border-width: 0px;
 }
 
-  
-      
-body {
-  background: rgb(123, 117, 117)
-  }
+.site {
+  background-color: #282828;
+}
 
 
 .heading {

@@ -38,10 +38,10 @@ const App = () => {
     }
   };
   return (
+    <div className="site">
     <div className="container">
-      <h1>Task Management</h1>
       <div className="add-form">
-        <h2>{editingTask ? "Edit Task" : "Add New Task"}</h2>
+        <h4 class="importanttitle">Task Management Webapp</h4>
         <TaskForm
           onSubmit={editingTask ? handleUpdate : handleAddTask}
           initialFormData={
@@ -83,6 +83,7 @@ const App = () => {
             </div>
         </div> 
         */}
+    </div>
     </div>
   );
 };

@@ -11,6 +11,15 @@ const TaskListContainer = forwardRef(({ onEdit, onDelete }, ref) => {
   const [completedTasks, setCompletedTasks] = useState([]);
   const [uncompletedTasks, setUncompletedTasks] = useState([]);
 
+  const toggleStatus = async (id) => {
+    try {
+      await axios.put(`http://localhost:3001/tasks/status/${id}`);
+      fetchTasks();
+    } catch (error) {
+      console.error("Error fetching tasks", error);
+    }
+  };
+
   const fetchTasks = async () => {
     try {
       const response = await axios.get("http://localhost:3001/tasks");
@@ -34,7 +43,7 @@ useEffect(()=>{
     fetchTasks,
   }));
 
-  return <TaskList uncompletedTasks={uncompletedTasks} completedTasks={completedTasks} onEdit={onEdit} onDelete={onDelete} />;
+  return <TaskList toggleStatus={toggleStatus} uncompletedTasks={uncompletedTasks} completedTasks={completedTasks} onEdit={onEdit} onDelete={onDelete} />;
 });
 
 export default TaskListContainer;
