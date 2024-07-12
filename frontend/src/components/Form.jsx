@@ -51,7 +51,7 @@ export const TaskForm = ({
           value={formData.taskTitle}
           onChange={handleInputChange} 
           required
-          minLength={8}
+          minLength={4}
         /> (required)
       </label>
       <label>
@@ -61,7 +61,7 @@ export const TaskForm = ({
           value={formData.description}
           onChange={handleInputChange}
           required
-          minLength={8}
+          minLength={4}
         /> (required)
       </label>
       <label>
