@@ -49,7 +49,7 @@ export const TaskForm = ({
           type="text"
           name="taskTitle"
           value={formData.taskTitle}
-          onChange={handleInputChange}
+          onChange={handleInputChange} required
         /> (required)
       </label>
       <label>
@@ -57,7 +57,7 @@ export const TaskForm = ({
         <textarea
           name="description"
           value={formData.description}
-          onChange={handleInputChange}
+          onChange={handleInputChange} required
         /> (required)
       </label>
       <label>
@@ -66,7 +66,7 @@ export const TaskForm = ({
           type="date"
           name="dateDue"
           value={formData.dateDue}
-          onChange={handleDateChange}
+          onChange={handleDateChange} required
         /> (required)
       </label>
       <label>
