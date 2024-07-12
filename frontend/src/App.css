@@ -230,6 +230,12 @@ h1 {
   background-color: #282828;
 }
 
+.titleBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .buttonrow {
   display: flex;
   flex-direction: row;

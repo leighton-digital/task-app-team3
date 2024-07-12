@@ -37,6 +37,7 @@ const TaskList = ({ completedTasks, uncompletedTasks, onEdit, onDelete, toggleSt
   // </table>
     <div className="main">
             <div id="uncompleted" className="task_viewer">
+              
               {uncompletedTasks.map((task) =>                 <div className="task">
                     <h1 className="tasktitle"> {task.taskTitle} </h1>
                     <span className="taskdescription">
