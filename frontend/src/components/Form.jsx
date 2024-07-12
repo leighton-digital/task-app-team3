@@ -50,7 +50,7 @@ export const TaskForm = ({
           name="taskTitle"
           value={formData.taskTitle}
           onChange={handleInputChange}
-        />
+        /> (required)
       </label>
       <label>
         Description:
@@ -58,7 +58,7 @@ export const TaskForm = ({
           name="description"
           value={formData.description}
           onChange={handleInputChange}
-        />
+        /> (required)
       </label>
       <label>
         Due Date:
@@ -67,7 +67,7 @@ export const TaskForm = ({
           name="dateDue"
           value={formData.dateDue}
           onChange={handleDateChange}
-        />
+        /> (required)
       </label>
       <label>
         Status:
